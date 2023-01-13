@@ -1,4 +1,5 @@
 import { useAuth } from "./context/AuthProvider";
+import SigninForm from "./SigninForm";
 
 const Home = () => {
     const {value} = useAuth();
@@ -6,9 +7,8 @@ const Home = () => {
     return (
     <>    
         <h2>Home (Public)</h2>
-        <button type="button" onClick={value.onLogin}>
-            Sign In
-        </button>
+        {value.token ?
+        (<></>) : (<SigninForm/>)}
     </>
     );
 }
