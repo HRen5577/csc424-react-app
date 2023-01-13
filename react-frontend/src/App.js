@@ -1,48 +1,43 @@
-import { useState } from 'react';
+import { createContext } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
+import { useAuth } from './context/AuthProvider';
+import { AuthProvider } from './context/AuthProvider';
 import Landing from './Landing'
 import Home from './Home';
-import { fakeAuth } from './utils/FakeAuth';
+
+
+export const AuthContext = createContext(null);
 
 const App = () => {
-    const [token, setToken] = useState(null);
 
-    const handleLogin = async () => {
-        const token = await fakeAuth();
-        setToken(token);
-    };
-    
-    const handleLogout = () =>{
-        setToken(null);
-    } 
     return( 
-    <>
-        <Navigation token={token} onLogout={handleLogout}/>
-
+    <AuthProvider>
+        <Navigation/>
+       
         <h1>React Router</h1>
+        
         <Routes>
-            <Route index element={<Home onLogin={handleLogin}/>}/>
-            <Route path="home" 
-                element={
-                        <Home onLogin={handleLogin}/>
-                }/>
+            <Route index element={<Home/>}/>
             <Route path="landing" element={<Landing/>}/>
+            <Route path="home" element={<Home/>}/>
             <Route path="*" element={<p>There's nothing here: 404</p>}/>
         </Routes>
-    </>
+
+    </AuthProvider>
     );
 };
 
-const Navigation = ({token, onLogout}) =>(
+const Navigation = () => {
+ const {value} = useAuth();
+ return(   
     <nav>
         <Link to="/landing">Landing</Link>
         <Link to="/home">Home</Link>
-        { token && (
-            <button type="button" onClick={onLogout}>Sign Out</button>
-        )
-
-        }
+        {value.token && (
+            <button type="button" onClick={value.onLogout}>Sign Out</button>
+        )}
     </nav>
-);
+    );
+};
 
 export default App;
