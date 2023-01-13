@@ -4,6 +4,7 @@ import { useAuth } from './context/AuthProvider';
 import { AuthProvider } from './context/AuthProvider';
 import Landing from './Landing'
 import Home from './Home';
+import ProtectedRoute from './utils/ProtectedRoute';
 
 
 export const AuthContext = createContext(null);
@@ -18,7 +19,13 @@ const App = () => {
         
         <Routes>
             <Route index element={<Home/>}/>
-            <Route path="landing" element={<Landing/>}/>
+            
+            <Route path="landing" element={
+                <ProtectedRoute>    
+                    <Landing/>
+                </ProtectedRoute>
+            }/>
+            
             <Route path="home" element={<Home/>}/>
             <Route path="*" element={<p>There's nothing here: 404</p>}/>
         </Routes>

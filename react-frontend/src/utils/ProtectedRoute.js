@@ -1,7 +1,11 @@
 import {Navigate} from "react-router-dom";
-const ProtectedRoute = ({ user,children }) => {
-    if(!user){
-        return <Navigate to="/landing" repalce/>;
+import { useAuth } from "../context/AuthProvider";
+
+const ProtectedRoute = ({ children }) => {
+    const {value} = useAuth();
+
+    if(!value.token){
+        return <Navigate to="/home" replace/>;
     }
     return children;
 };

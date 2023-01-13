@@ -5,7 +5,7 @@ const Landing = () =>{
 
     return( 
     <>
-        <h2>Landing (Public: anyone can access this page)</h2>
+        <h2>Landing (Protected: Only authenticated can view this)</h2>
         <div>Authenticated as {value.token}</div>
     </>
     );
