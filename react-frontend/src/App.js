@@ -29,7 +29,6 @@ const App = () => {
             <Route path="home" element={<Home/>}/>
             <Route path="*" element={<p>There's nothing here: 404</p>}/>
         </Routes>
-
     </AuthProvider>
     );
 };

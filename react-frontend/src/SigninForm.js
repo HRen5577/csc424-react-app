@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "./context/AuthProvider";
+import "./SigninForm.css";
 
 const fakeUser = {
     username:"hr",
@@ -28,7 +29,7 @@ const SigninForm = () =>{
     }
 
     return(
-        <form>
+        <form className="signIn">
             <label>Name:</label>
             <input type="text" value={username} 
                 onChange={handleUsernameChange} />
