@@ -6,20 +6,12 @@ const users = [
     }
 ];
 
-function findByUsername(username){
-    users.forEach( user => {
-        if(user.username == username){
-            return user
-        }
-    });
-}
 
 function searchUser(username,password){
-    user = users[0];//findByUsername(username);
+    usersFiltered = users.filter( (user) =>  user.username == username && user.password == password)[0];
 
-    if(user !== undefined && user.username === username && user.password === password){
-        console.log("foudn");
-        return true
+    if(usersFiltered !== undefined){
+        return true;
     }
     return false;
 }

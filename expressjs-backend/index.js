@@ -17,13 +17,14 @@ app.get('/account', (req, res) => {
 
 app.post('/account/login', (req,res) => {
     var userToLogin = req.body;
+    const userFound = userFunctions.searchUser(userToLogin.username,userToLogin.password);
     
-    const user = userFunctions.searchUser(userToLogin.username,userToLogin.password);
-    if(user.username = user.username && user.password == password){
+    console.log(userFound);
+    if(userFound){
         userToLogin.token = '2342f2f1d131rf12';
         res.status(201).send(userToLogin);
     }else{
-        res.status(401);
+        res.status(403).end();
     }
 });
 

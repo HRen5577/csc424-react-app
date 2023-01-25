@@ -18,22 +18,14 @@ const LoginForm = () =>{
     }
     function submitForm(){
         login(username,password).then( result => {
-            alert(result);
-
-            if(result !== false && result.data.token !== undefined){
+            if(result.status === 201 && result.data.token !== undefined){
                 value.onLogin(result.data.token);
             }
             else{
+                console.log(result);
                 alert("Wrong password or username");
             }
         });
-
-        // if(fakeUser['username'] === username && fakeUser['password'] === password){
-        //     value.onLogin();
-        // }
-        // else{
-        //     alert("Wrong password or username!");
-        // }
     }
 
     return(
@@ -47,7 +39,6 @@ const LoginForm = () =>{
             <button type="button" value="Submit" onClick={submitForm}>
                 Sign In
             </button>
-
         </form>
     )
 }

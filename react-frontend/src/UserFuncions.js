@@ -9,7 +9,7 @@ export async function login(un, pas) {
         password: pas
       });
     } catch (error) {
-      console.log(error);
+      //console.log(error);
       return false;
     }
   }
