@@ -1,13 +1,10 @@
 import { useState } from "react";
+import { login } from "./UserFuncions";
 import { useAuth } from "./context/AuthProvider";
-import "./SigninForm.css";
+import "./LoginForm.css";
 
-const fakeUser = {
-    username:"hr",
-    password:"csc424"
-}
 
-const SigninForm = () =>{
+const LoginForm = () =>{
     const {value} = useAuth();
 
     const [username, setUsername] = useState();
@@ -20,16 +17,27 @@ const SigninForm = () =>{
         setPassword(event.target.value);
     }
     function submitForm(){
-        if(fakeUser['username'] === username && fakeUser['password'] === password){
-            value.onLogin();
-        }
-        else{
-            alert("Wrong password or username!");
-        }
+        login(username,password).then( result => {
+            alert(result);
+
+            if(result !== false && result.data.token !== undefined){
+                value.onLogin(result.data.token);
+            }
+            else{
+                alert("Wrong password or username");
+            }
+        });
+
+        // if(fakeUser['username'] === username && fakeUser['password'] === password){
+        //     value.onLogin();
+        // }
+        // else{
+        //     alert("Wrong password or username!");
+        // }
     }
 
     return(
-        <form className="signIn">
+        <form className="login">
             <label>Name:</label>
             <input type="text" value={username} 
                 onChange={handleUsernameChange} />
@@ -44,4 +52,4 @@ const SigninForm = () =>{
     )
 }
 
-export default SigninForm;
+export default LoginForm;

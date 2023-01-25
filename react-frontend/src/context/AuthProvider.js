@@ -1,6 +1,5 @@
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fakeAuth } from "../utils/FakeAuth";
 
 const AuthContext = createContext({});
 
@@ -9,8 +8,7 @@ export const AuthProvider = ({children}) => {
 
     const [token,setToken] = useState(null);
 
-    const handleLogin = async () => {
-        const token = await fakeAuth();
+    const handleLogin = async (token) => {
         setToken(token);
         navigate("/landing");
     };
