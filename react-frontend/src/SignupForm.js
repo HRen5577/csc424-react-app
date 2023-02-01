@@ -4,7 +4,7 @@ import { useAuth } from "./context/AuthProvider";
 import "./SignupForm.css";
 
 
-const SignupForm = () =>{
+const SignupForm = (props) =>{
     const {value} = useAuth();
 
     const [username, setUsername] = useState();
@@ -41,16 +41,16 @@ const SignupForm = () =>{
 
     return(
         <form className="signup">
+            <label><h1>Signup Form</h1></label>
             <label>Name:</label>
             <input type="text" value={username} 
                 onChange={handleUsernameChange} />
             <lablel>Password: </lablel>
             <input type="password" value={password} 
                 onChange={handlePasswordChange} />
-            <button type="button" value="Submit" onClick={submitForm}>
-                Sign Up
-            </button>
-            <label>Already have an account?<strong onClick={""}>Sign In</strong></label>
+            <button type="button" value="Submit" onClick={submitForm}>Sign Up</button>
+            <label onClick={() => props.isLogin(true)}>Already have an account? <strong>Sign In!</strong></label>            
+
         </form>
     )
 }
