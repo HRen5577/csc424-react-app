@@ -1,5 +1,6 @@
 import { useAuth } from "./context/AuthProvider";
 import LoginForm from "./LoginForm";
+import SignupForm from "./SignupForm";
 
 const Home = () => {
     const {value} = useAuth();
@@ -8,7 +9,7 @@ const Home = () => {
     <>    
         <h2>Home (Public)</h2>
         {value.token ?
-        (<></>) : (<LoginForm/>)}
+        (<></>) : (<SignupForm/>)}
     </>
     );
 }

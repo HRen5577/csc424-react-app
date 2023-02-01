@@ -12,14 +12,36 @@ app.get('/', (req, res)=>{
 
 
 app.get('/account', (req, res) => {
-    res.status(201).send(users);
+    res.status(201).send(userFunctions.getUsers());
+})
+
+app.get('/account/:username', (req, res) => {
+    console.log(req.params)
+
+    res.status(201).send(userFunctions.getUser(req.query.username));
+})
+
+app.post('/account/register', (req, res) => {
+    var userToAdd = req.body;
+    const userFound = userFunctions.searchUsername(userToAdd.username);
+
+    if(userFound !== true){
+        userFunctions.addUser({
+            username: userToAdd.username,
+            password: userToAdd.password
+        });
+        userToAdd.token = '2342f2f1d131rf13';
+        res.status(201).send(userToAdd);
+    }
+    else{
+        res.status(403).end();
+    }
 })
 
 app.post('/account/login', (req,res) => {
     var userToLogin = req.body;
     const userFound = userFunctions.searchUser(userToLogin.username,userToLogin.password);
     
-    console.log(userFound);
     if(userFound){
         userToLogin.token = '2342f2f1d131rf12';
         res.status(201).send(userToLogin);

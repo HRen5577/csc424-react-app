@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { login } from "./UserFuncions";
+import { signup } from "./UserFuncions";
 import { useAuth } from "./context/AuthProvider";
-import "./LoginForm.css";
+import "./SignupForm.css";
 
 
-const LoginForm = () =>{
+const SignupForm = () =>{
     const {value} = useAuth();
 
     const [username, setUsername] = useState();
@@ -13,23 +13,34 @@ const LoginForm = () =>{
     function handleUsernameChange(event){
         setUsername(event.target.value);
     }
+
     function handlePasswordChange(event){
         setPassword(event.target.value);
     }
+
+    function validatePassword(){
+        return true;
+    }
+
     function submitForm(){
-        login(username,password).then( result => {
-            if(result.status === 201 && result.data.token !== undefined){
-                value.onLogin(result.data.token);
-            }
-            else{
-                console.log(result);
-                alert("Wrong password or username");
-            }
-        });
+        if(validatePassword(password)){
+            signup(username,password).then( result => {
+                if(result.status === 201 && result.data.token !== undefined){
+                    value.onLogin(result.data.token);
+                }
+                else{
+                    console.log(result);
+                    alert("Username already taken?!");
+                }
+            });
+        }
+        else{
+            alert("Invalid Password")
+        }
     }
 
     return(
-        <form className="login">
+        <form className="signup">
             <label>Name:</label>
             <input type="text" value={username} 
                 onChange={handleUsernameChange} />
@@ -37,13 +48,11 @@ const LoginForm = () =>{
             <input type="password" value={password} 
                 onChange={handlePasswordChange} />
             <button type="button" value="Submit" onClick={submitForm}>
-                Sign In
-            </button>
-            <button type="button" onClick={""}>
                 Sign Up
             </button>
+            <label>Already have an account?<strong onClick={""}>Sign In</strong></label>
         </form>
     )
 }
 
-export default LoginForm;
+export default SignupForm;
