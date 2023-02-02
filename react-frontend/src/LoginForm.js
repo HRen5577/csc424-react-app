@@ -38,7 +38,7 @@ const LoginForm = (props) =>{
             <input type="password" value={password} 
                 onChange={handlePasswordChange} />
             <button type="button" value="Submit" onClick={submitForm}>Sign In</button>
-            <button type="button" onClick={() => props.isLogin(false)}>Sign Up</button>            
+            <button type="button" onClick={() => props.setLogin(false)}>Sign Up</button>            
 
         </form>
     )

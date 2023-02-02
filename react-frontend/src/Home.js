@@ -12,9 +12,9 @@ const Home = () => {
 
     const chooseForm = () => {
         if(isLogin){
-            return (<LoginForm isLogin={setLogin}/>)
+            return (<LoginForm setLogin={setLogin}/>)
         }
-        return (<SignupForm isLogin={setLogin}/>)
+        return (<SignupForm setLogin={setLogin}/>)
     }
     
     return (

@@ -16,9 +16,13 @@ app.get('/account', (req, res) => {
 })
 
 app.get('/account/:username', (req, res) => {
-    console.log(req.params)
-
-    res.status(201).send(userFunctions.getUser(req.query.username));
+    let username = req.params["username"];
+    if(username){
+        res.status(200).send(userFunctions.getUser(username))
+    }
+    else{
+        res.status(404).end("User not found!")
+    }
 })
 
 app.post('/account/register', (req, res) => {

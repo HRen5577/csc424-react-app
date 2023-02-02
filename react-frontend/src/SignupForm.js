@@ -19,7 +19,8 @@ const SignupForm = (props) =>{
     }
 
     function validatePassword(){
-        return true;
+        let myRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{1,}$");
+        return myRegex.test(password); 
     }
 
     function submitForm(){
@@ -35,7 +36,7 @@ const SignupForm = (props) =>{
             });
         }
         else{
-            alert("Invalid Password")
+            alert("Invalid Password!\nPassword must have an uppercase, a lowercase a symbol and a number!")
         }
     }
 
@@ -49,7 +50,7 @@ const SignupForm = (props) =>{
             <input type="password" value={password} 
                 onChange={handlePasswordChange} />
             <button type="button" value="Submit" onClick={submitForm}>Sign Up</button>
-            <label onClick={() => props.isLogin(true)}>Already have an account? <strong>Sign In!</strong></label>            
+            <label onClick={() => props.setLogin(true)}>Already have an account? <strong>Sign In!</strong></label>            
 
         </form>
     )
