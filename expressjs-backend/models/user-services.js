@@ -9,22 +9,33 @@ mongoose.connect("mongodb://127.0.0.1:27017/users",{
     }).catch((error) => console.log(error));
 
 
+async function checkUsernameExists(username) {
+    return (await userModel.find({ username: username }))[0] !== undefined;
+}
+
 async function checkLogin(username, password) {
     return (await userModel.find({ username: username, password:password }))[0] !== undefined;
 }
 
-async function getAllUsers() {
-    result = await userModel.find();
+async function findUserById(id) {
+    try {
+        return await userModel.findById(id);
+    } catch (error) {
+        console.log(error);
+        return undefined;
+    }
+    }
+    
+async function getUser(username) {
+    return (await userModel.find({ username: username}))[0];
 }
 
-async function findUserById(id) {
-try {
-    return await userModel.findById(id);
-} catch (error) {
-    console.log(error);
-    return undefined;
+
+async function getAllUsers() {
+    return await userModel.find();
 }
-}
+
+
 
 async function addUser(user) {
 try {
@@ -37,12 +48,17 @@ try {
 }
 }
 
-async function checkUsernameExists(username) {
-    return (await userModel.find({ username: username }))[0] !== undefined;
+async function deleteUser(username) {
+    return await userModel.findOneAndDelete({username:username});
 }
+
+
+
+exports.getUser = getUser;
 exports.getAllUsers = getAllUsers;
 exports.checkLogin = checkLogin;
 exports.getAllUsers = getAllUsers
 exports.findUserById = findUserById;
 exports.checkUsernameExists = checkUsernameExists
 exports.addUser = addUser;
+exports.deleteUser = deleteUser;

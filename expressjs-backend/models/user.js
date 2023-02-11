@@ -12,6 +12,11 @@ const UserSchema = new mongoose.Schema(
             required: true,
             trim: true,
         },
+        token: {
+            type: String,
+            required: true,
+            trim: true,
+        },
 
     },
     {collection: "users_list"}
