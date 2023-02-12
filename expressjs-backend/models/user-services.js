@@ -14,7 +14,7 @@ async function checkUsernameExists(username) {
 }
 
 async function checkLogin(username, password) {
-    return (await userModel.find({ username: username, password:password }))[0] !== undefined;
+    return (await userModel.find({ username: username, password:password }))[0];
 }
 
 async function findUserById(id) {

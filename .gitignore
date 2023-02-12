@@ -1,3 +1,5 @@
 /expressjs-backend/node_modules
 /expressjs-backend/.env
+/expressjs-backend/.cert
 /react-frontend/node_modules
+/react-frontend/.cert
