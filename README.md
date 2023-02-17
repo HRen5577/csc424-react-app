@@ -8,3 +8,8 @@ generate token secret
 
 Project requires a windows machine to start the frontend ecause HTTPS is enabled with Windows
 else change the package-json to Linux/Mac commands
+
+# NOTES: 
+Update schemas to include phone numbers
+Update cookies on the frontend
+Update auto login
