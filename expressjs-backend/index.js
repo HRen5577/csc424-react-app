@@ -13,16 +13,15 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
-https
-    .createServer(
+https.createServer(
         {
-            key: fs.readFileSync('./.cert/key.pem'),
-            cert: fs.readFileSync("./.cert/cert.pem"),
+            key:  fs.readFileSync("./cert/key.pem"),
+            cert: fs.readFileSync("./cert/cert.pem"),
         },
         app
     )
     .listen(port, () => {
-        console.log(`Example appp listening at http//localhost:${port}`);
+        console.log(`Example app listening at http//localhost:${port}`);
     });
 
 app.get('/', (req, res)=>{
@@ -38,6 +37,21 @@ app.get('/account/:username', async (req, res) => {
     let username = req.params["username"];
     if(username){
         res.status(200).send(await userServices.getUser(username))
+    }
+    else{
+        res.status(404).end("User not found!")
+    }
+})
+
+app.get('/account/:username/contacts', async (req,res) =>{
+    let username = req.params["username"];
+    if(username){
+        var allUsersInformation = await userServices.getAllUsers();
+        var allUsers = allUsersInformation.map(user => {
+            return {name: user.username}
+        })
+        var filteredusers = allUsers.filter(user => user.name !== username)
+        res.status(200).send(filteredusers)
     }
     else{
         res.status(404).end("User not found!")
@@ -79,4 +93,6 @@ app.post('/account/login', async (req,res) => {
         res.status(403).end();
     }
 });
+
+
 

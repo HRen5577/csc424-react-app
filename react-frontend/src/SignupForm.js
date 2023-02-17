@@ -9,6 +9,7 @@ const SignupForm = (props) =>{
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
+    const [confirmPassword, setConfirmPassword] = useState();
 
     function handleUsernameChange(event){
         setUsername(event.target.value);
@@ -18,9 +19,14 @@ const SignupForm = (props) =>{
         setPassword(event.target.value);
     }
 
+    function handleConfirmPasswordChange(event){
+        setConfirmPassword(event.target.value);
+    }
+
+
     function validatePassword(){
         let myRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{1,}$");
-        return myRegex.test(password); 
+        return myRegex.test(password) && (password === confirmPassword); 
     }
 
     function submitForm(){
@@ -46,9 +52,14 @@ const SignupForm = (props) =>{
             <label>Name:</label>
             <input type="text" value={username} 
                 onChange={handleUsernameChange} />
+            
             <lablel>Password: </lablel>
             <input type="password" value={password} 
                 onChange={handlePasswordChange} />
+            
+            <lablel>Confirm Password: </lablel>
+            <input type="password" value={confirmPassword} 
+                onChange={handleConfirmPasswordChange} />
             <button type="button" value="Submit" onClick={submitForm}>Sign Up</button>
             <label onClick={() => props.setLogin(true)}>Already have an account? <strong>Sign In!</strong></label>            
 
