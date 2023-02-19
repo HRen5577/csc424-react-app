@@ -10,11 +10,13 @@ export const AuthProvider = ({children}) => {
 
     const handleLogin = async (token) => {
         setToken(token);
+        document.cookie = `token=${token}`;
         navigate("/landing");
     };
 
     const handleLogout = () => {
         setToken(null);
+        document.cookie = `token=;Max-Age=-99999999;`;
     };
 
     const value = {
