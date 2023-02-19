@@ -21,6 +21,7 @@ export const AuthProvider = ({children}) => {
 
     const value = {
         token,
+        setToken,
         onLogin: handleLogin,
         onLogout: handleLogout,
     };
