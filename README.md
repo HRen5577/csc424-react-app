@@ -1,7 +1,7 @@
 # Project for CSC424 class
 This a simple application that was created for Cal Poly's CSC424 Software Security class. Entire project was created with the React framework used MongoDB as it's database. 
 
-# IMPORTANT NOTE --- PLEASE READ TO AVOID CONFUSION ---
+# IMPORTANT NOTE
 ## HTTPS
 ### Frontend
 HTTPS is enabled for Windows only, if another OS is used, the package.json file might need to change. It's important to note that you will need to generate your own certifications for the project. These can be stored in a folder called "reactcert" in react-frontend folder.

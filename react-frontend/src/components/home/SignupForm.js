@@ -68,7 +68,15 @@ const SignupForm = (props) =>{
             });
         }
         else{
-            alert("Invalid Password!\nPassword must have an uppercase, a lowercase a symbol and a number!")
+            if(password !== confirmPassword){
+                alert("Passwords not the same!");
+            }
+            else if(validPhone() === false){
+                alert("Invalid Phone Number!")
+            }
+            else{
+                alert("Invalid Password!\nPassword must have an uppercase, a lowercase a symbol and a number!")
+            }
         }
     }
 
