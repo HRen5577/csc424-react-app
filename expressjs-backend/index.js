@@ -37,7 +37,9 @@ app.get('/account', async (req, res) => {
 app.get('/account/:username', async (req, res) => {
     let username = req.params["username"];
     if(username){
-        res.status(200).send(await userServices.getUser(username))
+        let user = await userServices.getUser(username);
+        let htmlEncoded = `<p class="user">${user}</p>`;
+        res.status(200).send(htmlEncoded);
     }
     else{
         res.status(404).end("User not found!")
@@ -49,6 +51,7 @@ app.get('/contacts', async (req,res) =>{
     var allUsers = allUsersInformation.map(user => {
         return {name: user.username, phoneNumber:user.phoneNumber}
     })
+    //let htmlEncoded = `<p class="user">${allUsers}</p>`;
     return res.status(200).send(allUsers);
 })
 
@@ -56,6 +59,7 @@ app.delete('/account/:username', async (req, res) => {
     let username = req.params["username"];
     if(username){
         const userDeleted = await userServices.deleteUser(username)
+        //let htmlEncoded = `<p class="user">${userDeleted}</p>`;
         res.status(200).send(userDeleted);
     }
     else{
@@ -70,6 +74,7 @@ app.post('/account/register', async (req, res) => {
     if(userFound !== true){
         let tk = jwtServices.generateAccessToken(userToAdd.username);
         const savedUser = await userServices.addUser(userToAdd);
+        //let htmlEncoded = `<p class="user">${tk}</p>`;
         res.status(201).send(tk);
     }
     else{
@@ -82,7 +87,9 @@ app.post('/account/login', async (req,res) => {
     const userFound = await userServices.checkLogin(userToLogin.username, userToLogin.password);
 
     if(userFound !== false){
-        res.status(201).send(jwtServices.generateAccessToken(userToLogin.username));
+        let tk = jwtServices.generateAccessToken(userToLogin.username);
+        //let htmlEncoded = `<p class="user">${tk}</p>`;
+        res.status(201).send(tk);
     }else{
         res.status(403).end();
     }
