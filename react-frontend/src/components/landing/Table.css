@@ -376,11 +376,7 @@
     font-size: 1rem;
   }
   
-  body {
-    color: #404040;
-    background: white;
-    font-size: 1rem;
-  }
+
   
   p,
   ol,
@@ -402,7 +398,9 @@
   h2,
   h3,
   h4,
-  h5 {
+  h5,
+  p,
+  tr {
     margin: 1.5rem 0;
     font-weight: 600;
     font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;

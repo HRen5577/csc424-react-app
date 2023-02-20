@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
-import { useAuth } from "./context/AuthProvider";
+import { useAuth } from "../../context/AuthProvider";
 import Table from "./Table";
-import { getContacts } from "./UserFunctions";
+import { getContacts } from "../../utils/UserFunctions";
 
 const Landing = () =>{
     const {value} = useAuth();

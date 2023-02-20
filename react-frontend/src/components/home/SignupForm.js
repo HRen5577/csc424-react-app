@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { signup } from "./UserFunctions";
-import { useAuth } from "./context/AuthProvider";
-import "./SignupForm.css";
+import { signup } from "../../utils/UserFunctions";
+import { useAuth } from "../../context/AuthProvider";
+import "./styles/SignupForm.css";
 
 
 const SignupForm = (props) =>{

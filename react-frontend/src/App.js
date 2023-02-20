@@ -2,8 +2,8 @@ import { createContext } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { useAuth } from './context/AuthProvider';
 import { AuthProvider } from './context/AuthProvider';
-import Landing from './Landing'
-import Home from './Home';
+import Landing from './components/landing/Landing'
+import Home from './components/home/Home';
 import ProtectedRoute from './utils/ProtectedRoute';
 
 

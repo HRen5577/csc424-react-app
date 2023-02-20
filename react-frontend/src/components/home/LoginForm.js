@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { login } from "./UserFunctions";
-import { useAuth } from "./context/AuthProvider";
-import "./LoginForm.css";
+import { login } from "../../utils/UserFunctions";
+import { useAuth } from "../../context/AuthProvider";
+import "./styles/LoginForm.css";
 
 
 const LoginForm = (props) =>{
