@@ -6,6 +6,7 @@ function TableBody ({contacts}) {
     return (
   <tr key={index}>
     <td>{row.name}</td>
+    <td>{row.phoneNumber}</td>
   </tr>
       );
     });
@@ -22,6 +23,7 @@ function TableHeader() {
     <thead>
       <tr>
         <th>Name</th>
+        <th>Phone Number</th>
       </tr>
     </thead>
   );

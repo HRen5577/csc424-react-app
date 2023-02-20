@@ -17,9 +17,11 @@ const LoginForm = (props) =>{
         setPassword(event.target.value);
     }
     function submitForm(){
-        login(username,password).then( result => {
-            if(result.status === 201 && result.data.token !== undefined){
-                value.onLogin(result.data.token);
+        let user = {username:username,password:password};
+
+        login(user).then( result => {
+            if(result.status === 201 && result.data !== undefined){
+                value.onLogin(result.data);
             }
             else{
                 console.log(result);
