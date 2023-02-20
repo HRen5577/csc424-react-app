@@ -1,98 +1,57 @@
-const https = require("https");
-const fs = require("fs");
+const userFunctions = require("./User");
 
-const express = require('express');
 const cors = require("cors");
-
-const userServices = require('./models/user-services');
-const jwtServices = require('./models/jwt-services');
-
+const express = require('express');
 const app = express();
+
 const port = 5000;
 
-app.use(cors());
 app.use(express.json());
 
-https.createServer(
-        {
-            key:  fs.readFileSync("./cert/key.pem"),
-            cert: fs.readFileSync("./cert/cert.pem"),
-        },
-        app
-    )
-    .listen(port, () => {
-        console.log(`Example app listening at https//localhost:${port}`);
-    });
+app.use(cors());
 
 app.get('/', (req, res)=>{
     res.send("Hello World");
 });
 
+app.get('/account', (req, res) => {
+    res.status(201).send(userFunctions.getUsers());
+});
 
-app.get('/account', async (req, res) => {
-    res.status(201).send( await userServices.getAllUsers());
+app.get('/account/:username', (req, res) => {
+    console.log(req.params)
+
+    res.status(201).send(userFunctions.getUser(req.query.username));
 })
 
-app.get('/account/:username', async (req, res) => {
-    let username = req.params["username"];
-    if(username){
-        res.status(200).send(await userServices.getUser(username))
-    }
-    else{
-        res.status(404).end("User not found!")
-    }
-})
-
-app.get('/account/:username/contacts', async (req,res) =>{
-    let username = req.params["username"];
-    if(username){
-        var allUsersInformation = await userServices.getAllUsers();
-        var allUsers = allUsersInformation.map(user => {
-            return {name: user.username}
-        })
-        var filteredusers = allUsers.filter(user => user.name !== username)
-        res.status(200).send(filteredusers)
-    }
-    else{
-        res.status(404).end("User not found!")
-    }
-})
-
-app.delete('/account/:username', async (req, res) => {
-    let username = req.params["username"];
-    if(username){
-        const userDeleted = await userServices.deleteUser(username)
-        res.status(200).send(userDeleted);
-    }
-    else{
-        res.status(404).end("No username given")
-    }
-})
-
-app.post('/account/register', async (req, res) => {
+app.post('/account/register', (req, res) => {
     var userToAdd = req.body;
-    const userFound = await userServices.checkUsernameExists(userToAdd.username);
+    const userFound = userFunctions.searchUsername(userToAdd.username);
 
     if(userFound !== true){
-        userToAdd.token = jwtServices.generateAccessToken(userToAdd.username);
-        const savedUser = await userServices.addUser(userToAdd);
-        res.status(201).send(savedUser);
+        userFunctions.addUser({
+            username: userToAdd.username,
+            password: userToAdd.password
+        });
+        userToAdd.token = '2342f2f1d131rf13';
+        res.status(201).send(userToAdd);
     }
     else{
         res.status(403).end();
     }
 })
 
-app.post('/account/login', async (req,res) => {
+app.post('/account/login', (req,res) => {
     var userToLogin = req.body;
-    const userFound = await userServices.checkLogin(userToLogin.username, userToLogin.password);
-    console.log(userFound)
-    if(userFound !== undefined){
-        res.status(201).send(userFound);
+    const userFound = userFunctions.searchUser(userToLogin.username,userToLogin.password);
+
+    if(userFound){
+        userToLogin.token = '2342f2f1d131rf12';
+        res.status(201).send(userToLogin);
     }else{
         res.status(403).end();
     }
 });
-
-
-
+app.listen(port, () => {
+    console.log(`Example appp listening at http//localhost:${port}`);
+});
