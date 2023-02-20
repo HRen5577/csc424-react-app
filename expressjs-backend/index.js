@@ -54,6 +54,8 @@ app.get('/contacts', async (req,res) =>{
         return {name: user.username, phoneNumber:user.phoneNumber}
     })
     //let htmlEncoded = `<p class="user">${allUsers}</p>`;
+    let userHtml = escape(user);
+    let htmlEncoded = `<p class="user">${userHtml}</p>`;
     return res.status(200).send(allUsers);
 })
 

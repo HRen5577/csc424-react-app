@@ -2,14 +2,18 @@
 This a simple application that was created for Cal Poly's CSC424 Software Security class. Entire project was created with the React framework used MongoDB as it's database. 
 
 # Lab 3 Notes
-## Vunerabilites Fixed
+## Vunerabilites Fixed (Used Snyk to analyze)
 ### 1) Information Exposture
 ![image](./img/vun1.jpg) 
 
-This was fixed with the following code edits below
+This was fixed with adding the package Helmet and passing it to the app. This can be seen in the picture below
 ![image](./img/vun1_fix.jpg)
 
-### 2)
+### 2) Cross-Site Scripting
+![image](./img/vun2.jpg) 
+
+This was fixed with validating the input for bad characters and parsing it to HTML. This can be seen in the picture below
+![image](./img/vun2_fix.jpg)
 
 # Setting Up the Project
 ## HTTPS

@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:110d3915-891c-40e9-bd97-2b2470285646",
+  "serialNumber": "urn:uuid:49867304-1c2b-4b29-b5fd-49705585feee",
   "metadata": {
-    "timestamp": "2023-02-20T17:46:41.196Z",
+    "timestamp": "2023-02-20T20:48:37.257Z",
     "tools": [
       {
         "vendor": "@cyclonedx",
@@ -2621,6 +2621,56 @@
     },
     {
       "type": "library",
+      "name": "helmet",
+      "version": "6.0.1",
+      "bom-ref": "helmet@6.0.1",
+      "author": "Adam Baldwin <adam@npmjs.com> (https://evilpacket.net)",
+      "description": "help secure Express/Connect apps with various HTTP headers",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f30a3e55d4214cc5413022136196864db13896f96d85e94f612be8c8dbe4e111024e6ad58cc7aba7d45f50e4176562ef09c027d692a3ed94712b8948f4096b73"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/helmet@6.0.1",
+      "externalReferences": [
+        {
+          "url": "git://github.com/helmetjs/helmet.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://helmetjs.github.io/",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/helmetjs/helmet/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/helmet/-/helmet-6.0.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/helmet"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "https",
       "version": "1.0.0",
       "bom-ref": "https@1.0.0",
@@ -3072,6 +3122,51 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/yallist"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lodash.escape",
+      "version": "4.0.1",
+      "bom-ref": "lodash.escape@4.0.1",
+      "author": "John-David Dalton <john.david.dalton@gmail.com> (http://allyoucanleet.com/)",
+      "description": "The lodash method `_.escape` exported as a module.",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "9d710e9dbfe32bd8340d832bd7f5efaba979c4c0fb1831b9e7e1926086264b41b8b4193f854443e0947d5826afb34e2ddf75a6271f640b2a7dbc9fa6af804e53"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/lodash.escape@4.0.1",
+      "externalReferences": [
+        {
+          "url": "lodash/lodash",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository\""
+        },
+        {
+          "url": "https://lodash.com/",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://registry.npmjs.org/lodash.escape/-/lodash.escape-4.0.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/lodash.escape"
         }
       ]
     },
@@ -9155,8 +9250,10 @@
         "dotenv@16.0.3",
         "express@4.18.2",
         "fs@0.0.1-security",
+        "helmet@6.0.1",
         "https@1.0.0",
         "jsonwebtoken@9.0.0",
+        "lodash.escape@4.0.1",
         "mongoose@6.9.1",
         "nodemon@2.0.20"
       ]
@@ -9486,6 +9583,9 @@
       "ref": "fs@0.0.1-security"
     },
     {
+      "ref": "helmet@6.0.1"
+    },
+    {
       "ref": "https@1.0.0"
     },
     {
@@ -9541,6 +9641,9 @@
     },
     {
       "ref": "yallist@4.0.0"
+    },
+    {
+      "ref": "lodash.escape@4.0.1"
     },
     {
       "ref": "mongoose@6.9.1",
