@@ -1,5 +1,5 @@
 import React from 'react';
-import './Table.css';
+import './styles/Table.css';
 
 function TableBody ({contacts}) {
   const rows = contacts.map((row, index) => {
