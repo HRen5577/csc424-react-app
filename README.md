@@ -1,5 +1,5 @@
 # Project for CSC424 class
-
+# Lab 1
 Personal Reminder:
 a1_s0_cpt translates to Assignment 1 step 0 complete
 

@@ -1,2 +1,6 @@
 /expressjs-backend/node_modules
+/expressjs-backend/cert
+/expressjs-backend/.env
 /react-frontend/node_modules
+/react-frontend/reactcert
+/img
