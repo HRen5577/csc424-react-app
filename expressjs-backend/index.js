@@ -3,7 +3,6 @@ const fs = require("fs");
 
 const express = require('express');
 const cors = require("cors");
-const helmet = require("helmet");
 
 const userServices = require('./models/user-services');
 const jwtServices = require('./models/jwt-services');
@@ -12,7 +11,7 @@ const app = express();
 const port = 5000;
 
 app.use(cors());
-app.use(helmet());
+app.use(express.json());
 
 https.createServer(
         {
