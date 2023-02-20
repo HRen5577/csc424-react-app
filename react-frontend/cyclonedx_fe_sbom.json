@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:ca555db4-5169-4ca8-a060-40b44946dd29",
+  "serialNumber": "urn:uuid:9306f4ec-da06-4574-8aad-521a95a421e1",
   "metadata": {
-    "timestamp": "2023-02-02T23:38:41.936Z",
+    "timestamp": "2023-02-20T17:47:07.360Z",
     "tools": [
       {
         "vendor": "@cyclonedx",
@@ -5732,6 +5732,496 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/@testing-library\\user-event"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "axios",
+      "version": "1.2.3",
+      "bom-ref": "axios@1.2.3",
+      "author": "Matt Zabriskie",
+      "description": "Promise based HTTP client for the browser and node.js",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a5d0e431825eb972d9e978ff4392773e1a5efa36c676c4b3950685564310cd150bd39fbafad7ad5fc4d5de9e07ad4e24cee3bd6edfa2a3fc86431bb2c40ff173"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/axios@1.2.3",
+      "externalReferences": [
+        {
+          "url": "https://github.com/axios/axios.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://axios-http.com",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/axios/axios/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/axios/-/axios-1.2.3.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/axios"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "form-data",
+          "version": "4.0.0",
+          "bom-ref": "axios@1.2.3|form-data@4.0.0",
+          "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
+          "description": "A library to create readable \"multipart/form-data\" streams. Can be used to submit forms and file uploads to other web applications.",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "1131249521a2e6dd10319ba25e803f43abdc9f170b40fe6f76e812a6e0328ba4951a2d9c94f3e9fb180486e31a1c2fb31a09f7d4a776df95b7e5fec7ca491ac3"
+            }
+          ],
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/form-data@4.0.0",
+          "externalReferences": [
+            {
+              "url": "git://github.com/form-data/form-data.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/form-data/-/form-data-4.0.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/axios\\node_modules\\form-data"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "follow-redirects",
+      "version": "1.15.2",
+      "bom-ref": "follow-redirects@1.15.2",
+      "author": "Ruben Verborgh <ruben@verborgh.org> (https://ruben.verborgh.org/)",
+      "description": "HTTP and HTTPS modules that follow redirects.",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5502c6df7a34e0a690f2e622dad54d6ddad6a75416c4d35e6be9e6201e0454cdbcbf48663f5ef3eda1b5fb002437356ae0a7974eadf6db5c9ee6a4c93fdd49c0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/follow-redirects@1.15.2",
+      "externalReferences": [
+        {
+          "url": "git@github.com:follow-redirects/follow-redirects.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/follow-redirects/follow-redirects",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/follow-redirects/follow-redirects/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/follow-redirects"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "asynckit",
+      "version": "0.4.0",
+      "bom-ref": "asynckit@0.4.0",
+      "author": "Alex Indigo <iam@alexindigo.com>",
+      "description": "Minimal async jobs utility library, with streams support",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "39e8bd387e2d461d18a94dc6c615fbf5d33f9b0560bdb64969235a464f9bb21923d12e5c7c772061a92b7818eb1f06ad5ca6f3f88a087582f1aca8a6d8c8d6d1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/asynckit@0.4.0",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/alexindigo/asynckit.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/alexindigo/asynckit#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/alexindigo/asynckit/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/asynckit"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "combined-stream",
+      "version": "1.0.8",
+      "bom-ref": "combined-stream@1.0.8",
+      "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
+      "description": "A stream that emits multiple other streams one after another.",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1503783117ee25e1dfedc05b04c2455e12920eafb690002b06599106f72f144e410751d9297b5214048385d973f73398c3187c943767be630e7bffb971da0476"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/combined-stream@1.0.8",
+      "externalReferences": [
+        {
+          "url": "git://github.com/felixge/node-combined-stream.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/felixge/node-combined-stream",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/combined-stream"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "delayed-stream",
+      "version": "1.0.0",
+      "bom-ref": "delayed-stream@1.0.0",
+      "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
+      "description": "Buffers events from a stream until you are ready to handle them.",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "672483ecd7fdd5a2c1d11c4be0a1ab28705797b11db350c098475ca156b05e72c3ed20e1a4d82db88236680920edaed04b8d63c4f499d7ba7855d1a730793731"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/delayed-stream@1.0.0",
+      "externalReferences": [
+        {
+          "url": "git://github.com/felixge/node-delayed-stream.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/felixge/node-delayed-stream",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/delayed-stream"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "mime-types",
+      "version": "2.1.35",
+      "bom-ref": "mime-types@2.1.35",
+      "description": "The ultimate javascript content-type utility.",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "64363e6cf9b9cd34c5f98a42ac053d9cad148080983d3d10b53d4d65616fe2cfbe4cd91c815693d20ebee11dae238323423cf2b07075cf1b962f9d21cda7978b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/mime-types@2.1.35",
+      "externalReferences": [
+        {
+          "url": "jshttp/mime-types",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository\""
+        },
+        {
+          "url": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/mime-types"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "mime-db",
+      "version": "1.52.0",
+      "bom-ref": "mime-db@1.52.0",
+      "description": "Media Type Database",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b0f538b95edd625bed589c70c311c3d0fba285536213b4f201b439496c43081f66518bce82ba103b061040e28f27c0886c4fb51135653a82b5502da7537818be"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/mime-db@1.52.0",
+      "externalReferences": [
+        {
+          "url": "jshttp/mime-db",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository\""
+        },
+        {
+          "url": "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/mime-db"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "proxy-from-env",
+      "version": "1.1.0",
+      "bom-ref": "proxy-from-env@1.1.0",
+      "author": "Rob Wu <rob@robwu.nl> (https://robwu.nl/)",
+      "description": "Offers getProxyForUrl to get the proxy URL for a URL, respecting the *_PROXY (e.g. HTTP_PROXY) and NO_PROXY environment variables.",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0fece439109b03d7f5b5d5912b445a091dc63efe7470cc5caf3e17f24e4b4d2503d43930e3b98a24465036e9c8b514e45b082d6944a8d515454481bd65788562"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/proxy-from-env@1.1.0",
+      "externalReferences": [
+        {
+          "url": "https://github.com/Rob--W/proxy-from-env.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/Rob--W/proxy-from-env#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/Rob--W/proxy-from-env/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/proxy-from-env"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "https",
+      "version": "1.0.0",
+      "bom-ref": "https@1.0.0",
+      "author": "hardus van der berg <hardus@sunfork.com> (http://www.sunfork.com)",
+      "description": "https mediation",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e040b9edd757ae4685d31f373a3f2c33a48b4070165f0f744a4aaed8ce0011610d677174d9d14913f180440f2280eefdb5c818a86ac3eda7b87f92f7ba6da582"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/https@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/https/-/https-1.0.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/https"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prettier",
+      "version": "2.8.4",
+      "bom-ref": "prettier@2.8.4",
+      "author": "James Long",
+      "description": "Prettier is an opinionated code formatter",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "bc84b846573614d8740724a4dd691deb19b0c41d05a4e9dd5b97e2b0ce47f21b194b1536556541e425889088d6beb1e3221c64da0ddb7cc28cf3bccd4eb65d77"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prettier@2.8.4",
+      "externalReferences": [
+        {
+          "url": "prettier/prettier",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository\""
+        },
+        {
+          "url": "https://prettier.io",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://registry.npmjs.org/prettier/-/prettier-2.8.4.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prettier"
         }
       ]
     },
@@ -41843,185 +42333,6 @@
     },
     {
       "type": "library",
-      "name": "asynckit",
-      "version": "0.4.0",
-      "bom-ref": "asynckit@0.4.0",
-      "author": "Alex Indigo <iam@alexindigo.com>",
-      "description": "Minimal async jobs utility library, with streams support",
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "39e8bd387e2d461d18a94dc6c615fbf5d33f9b0560bdb64969235a464f9bb21923d12e5c7c772061a92b7818eb1f06ad5ca6f3f88a087582f1aca8a6d8c8d6d1"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/asynckit@0.4.0",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/alexindigo/asynckit.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/alexindigo/asynckit#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/alexindigo/asynckit/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/asynckit"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "combined-stream",
-      "version": "1.0.8",
-      "bom-ref": "combined-stream@1.0.8",
-      "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
-      "description": "A stream that emits multiple other streams one after another.",
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "1503783117ee25e1dfedc05b04c2455e12920eafb690002b06599106f72f144e410751d9297b5214048385d973f73398c3187c943767be630e7bffb971da0476"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/combined-stream@1.0.8",
-      "externalReferences": [
-        {
-          "url": "git://github.com/felixge/node-combined-stream.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/felixge/node-combined-stream",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/combined-stream"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "delayed-stream",
-      "version": "1.0.0",
-      "bom-ref": "delayed-stream@1.0.0",
-      "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
-      "description": "Buffers events from a stream until you are ready to handle them.",
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "672483ecd7fdd5a2c1d11c4be0a1ab28705797b11db350c098475ca156b05e72c3ed20e1a4d82db88236680920edaed04b8d63c4f499d7ba7855d1a730793731"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/delayed-stream@1.0.0",
-      "externalReferences": [
-        {
-          "url": "git://github.com/felixge/node-delayed-stream.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/felixge/node-delayed-stream",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/delayed-stream"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "mime-types",
-      "version": "2.1.35",
-      "bom-ref": "mime-types@2.1.35",
-      "description": "The ultimate javascript content-type utility.",
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "64363e6cf9b9cd34c5f98a42ac053d9cad148080983d3d10b53d4d65616fe2cfbe4cd91c815693d20ebee11dae238323423cf2b07075cf1b962f9d21cda7978b"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/mime-types@2.1.35",
-      "externalReferences": [
-        {
-          "url": "jshttp/mime-types",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository\""
-        },
-        {
-          "url": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/mime-types"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "html-encoding-sniffer",
       "version": "2.0.1",
       "bom-ref": "html-encoding-sniffer@2.0.1",
@@ -55724,45 +56035,6 @@
     },
     {
       "type": "library",
-      "name": "mime-db",
-      "version": "1.52.0",
-      "bom-ref": "mime-db@1.52.0",
-      "description": "Media Type Database",
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "b0f538b95edd625bed589c70c311c3d0fba285536213b4f201b439496c43081f66518bce82ba103b061040e28f27c0886c4fb51135653a82b5502da7537818be"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/mime-db@1.52.0",
-      "externalReferences": [
-        {
-          "url": "jshttp/mime-db",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository\""
-        },
-        {
-          "url": "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/mime-db"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "on-headers",
       "version": "1.0.2",
       "bom-ref": "on-headers@1.0.2",
@@ -58446,56 +58718,6 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/eventemitter3"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "follow-redirects",
-      "version": "1.15.2",
-      "bom-ref": "follow-redirects@1.15.2",
-      "author": "Ruben Verborgh <ruben@verborgh.org> (https://ruben.verborgh.org/)",
-      "description": "HTTP and HTTPS modules that follow redirects.",
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "5502c6df7a34e0a690f2e622dad54d6ddad6a75416c4d35e6be9e6201e0454cdbcbf48663f5ef3eda1b5fb002437356ae0a7974eadf6db5c9ee6a4c93fdd49c0"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/follow-redirects@1.15.2",
-      "externalReferences": [
-        {
-          "url": "git@github.com:follow-redirects/follow-redirects.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/follow-redirects/follow-redirects",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/follow-redirects/follow-redirects/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/follow-redirects"
         }
       ]
     },
@@ -65346,6 +65568,9 @@
         "@testing-library/jest-dom@5.16.5",
         "@testing-library/react@13.4.0",
         "@testing-library/user-event@13.5.0",
+        "axios@1.2.3",
+        "https@1.0.0",
+        "prettier@2.8.4",
         "react-dom@18.2.0",
         "react-router-dom@6.6.2",
         "react-scripts@5.0.1",
@@ -66084,6 +66309,55 @@
         "@babel/runtime@7.20.7",
         "@testing-library/dom@8.19.1"
       ]
+    },
+    {
+      "ref": "axios@1.2.3",
+      "dependsOn": [
+        "follow-redirects@1.15.2",
+        "axios@1.2.3|form-data@4.0.0",
+        "proxy-from-env@1.1.0"
+      ]
+    },
+    {
+      "ref": "axios@1.2.3|form-data@4.0.0",
+      "dependsOn": [
+        "asynckit@0.4.0",
+        "combined-stream@1.0.8",
+        "mime-types@2.1.35"
+      ]
+    },
+    {
+      "ref": "follow-redirects@1.15.2"
+    },
+    {
+      "ref": "asynckit@0.4.0"
+    },
+    {
+      "ref": "combined-stream@1.0.8",
+      "dependsOn": [
+        "delayed-stream@1.0.0"
+      ]
+    },
+    {
+      "ref": "delayed-stream@1.0.0"
+    },
+    {
+      "ref": "mime-types@2.1.35",
+      "dependsOn": [
+        "mime-db@1.52.0"
+      ]
+    },
+    {
+      "ref": "mime-db@1.52.0"
+    },
+    {
+      "ref": "proxy-from-env@1.1.0"
+    },
+    {
+      "ref": "https@1.0.0"
+    },
+    {
+      "ref": "prettier@2.8.4"
     },
     {
       "ref": "loose-envify@1.4.0",
@@ -71507,24 +71781,6 @@
       ]
     },
     {
-      "ref": "asynckit@0.4.0"
-    },
-    {
-      "ref": "combined-stream@1.0.8",
-      "dependsOn": [
-        "delayed-stream@1.0.0"
-      ]
-    },
-    {
-      "ref": "delayed-stream@1.0.0"
-    },
-    {
-      "ref": "mime-types@2.1.35",
-      "dependsOn": [
-        "mime-db@1.52.0"
-      ]
-    },
-    {
       "ref": "html-encoding-sniffer@2.0.1",
       "dependsOn": [
         "whatwg-encoding@1.0.5"
@@ -73369,9 +73625,6 @@
       ]
     },
     {
-      "ref": "mime-db@1.52.0"
-    },
-    {
       "ref": "on-headers@1.0.2"
     },
     {
@@ -73715,9 +73968,6 @@
     },
     {
       "ref": "eventemitter3@4.0.7"
-    },
-    {
-      "ref": "follow-redirects@1.15.2"
     },
     {
       "ref": "is-plain-obj@3.0.0"

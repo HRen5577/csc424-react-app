@@ -1,6 +1,5 @@
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fakeAuth } from "../utils/FakeAuth";
 
 const AuthContext = createContext({});
 
@@ -9,18 +8,20 @@ export const AuthProvider = ({children}) => {
 
     const [token,setToken] = useState(null);
 
-    const handleLogin = async () => {
-        const token = await fakeAuth();
+    const handleLogin = async (token) => {
         setToken(token);
+        document.cookie = `token=${token}`;
         navigate("/landing");
     };
 
     const handleLogout = () => {
         setToken(null);
+        document.cookie = `token=;Max-Age=-99999999;`;
     };
 
     const value = {
         token,
+        setToken,
         onLogin: handleLogin,
         onLogout: handleLogout,
     };
