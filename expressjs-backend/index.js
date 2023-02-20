@@ -14,6 +14,38 @@ const port = 5000;
 
 app.use(cors());
 app.use(helmet());
+app.use(helmet.contentSecurityPolicy({
+    useDefaults: false, // you can change it to `true` if you want.
+    directives:{
+      defaultSrc: [
+        '\'self\'',
+        'https://localhost:3000',
+      ],
+      styleSrc: [
+        '\'self\'',
+        '\'unsafe-inline\'',
+        'https://localhost:3000',
+      ],
+      imageSrc: [
+        '\'self\'',
+        '\'unsafe-inline\'',
+        'data:',
+        'https://localhost:3000',
+      ],
+      scriptSrc: [
+        '\'self\'',
+        '\'unsafe-inline\'',
+        'https://localhost:3000',
+      ],
+      contentSrc: [
+        '\'self\'',
+        '\'unsafe-inline\'',
+        'https://localhost:3000',
+      ],
+    }
+  }));
+
+app.use(express.json());
 
 https.createServer(
         {
@@ -89,6 +121,7 @@ app.post('/account/register', async (req, res) => {
 
 app.post('/account/login', async (req,res) => {
     var userToLogin = req.body;
+    console.log(userToLogin);
     const userFound = await userServices.checkLogin(userToLogin.username, userToLogin.password);
 
     if(userFound !== false){

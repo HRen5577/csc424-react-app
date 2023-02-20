@@ -8,12 +8,14 @@ This a simple application that was created for Cal Poly's CSC424 Software Securi
 
 This was fixed with adding the package Helmet and passing it to the app. This can be seen in the picture below
 ![image](./img/vun1_fix.jpg)
+![image](./img/vun1_fix02.jpg)
 
 ### 2) Cross-Site Scripting
 ![image](./img/vun2.jpg) 
 
-This was fixed with validating the input for bad characters and parsing it to HTML. This can be seen in the picture below
+This was fixed with validating the input for bad characters and parsing it to HTML.
 ![image](./img/vun2_fix.jpg)
+
 
 # Setting Up the Project
 ## HTTPS
