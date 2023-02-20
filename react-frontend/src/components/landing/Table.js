@@ -4,10 +4,10 @@ import './styles/Table.css';
 function TableBody ({contacts}) {
   const rows = contacts.map((row, index) => {
     return (
-  <tr key={index}>
-    <td>{row.name}</td>
-    <td>{row.phoneNumber}</td>
-  </tr>
+      <tr key={index}>
+        <td>{row.name}</td>
+        <td>{row.phoneNumber}</td>
+      </tr>
       );
     });
     return (
