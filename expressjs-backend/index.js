@@ -43,12 +43,12 @@ app.get('/account/:username', async (req, res) => {
     }
 })
 
-app.get('/account/contacts', async (req,res) =>{
+app.get('/contacts', async (req,res) =>{
     var allUsersInformation = await userServices.getAllUsers();
     var allUsers = allUsersInformation.map(user => {
         return {name: user.username}
     })
-    return allUsers;
+    return res.status(200).send(allUsers);
 })
 
 app.delete('/account/:username', async (req, res) => {

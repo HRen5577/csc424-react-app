@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import { useAuth } from "./context/AuthProvider";
+import Table from "./Table";
 import { getContacts } from "./UserFunctions";
 
 const Landing = () =>{
@@ -13,14 +14,12 @@ const Landing = () =>{
             }
          });
       },[setTableData]);
-          
+
     return( 
     <>
         <h2>Landing (Protected: Only authenticated can view this)</h2>
         <div>Authenticated as {value.token}</div>
-        <table>
-
-        </table>
+        <Table contacts={tableData}/>
     </>
     );
 };
