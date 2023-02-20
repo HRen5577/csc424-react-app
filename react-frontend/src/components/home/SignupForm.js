@@ -45,9 +45,13 @@ const SignupForm = (props) =>{
         return false;
     }
 
-    function validatePassword(){
+    function validateRegEx(){
         let myRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{1,}$");
-        return myRegex.test(password) && (password === confirmPassword) && validPhone(); 
+        return myRegex.test(password);
+    }
+
+    function validatePassword(){
+        return validateRegEx() && (password === confirmPassword) && validPhone(); 
     }
 
     function submitForm(){
@@ -68,15 +72,17 @@ const SignupForm = (props) =>{
             });
         }
         else{
+            let str = "";
             if(password !== confirmPassword){
-                alert("Passwords not the same!");
+                str += "\n\tPasswords not the same!";
             }
-            else if(validPhone() === false){
-                alert("Invalid Phone Number!")
+            if(validPhone() === false){
+                str += "\n\tInvalid Phone Number!";
             }
-            else{
-                alert("Invalid Password!\nPassword must have an uppercase, a lowercase a symbol and a number!")
+            if(validateRegEx() === false){
+                str += "\n\tPassword must have an uppercase, a lowercase a symbol and a\n\tnumber!";
             }
+            alert("Form has the following errors:" + str);
         }
     }
 
