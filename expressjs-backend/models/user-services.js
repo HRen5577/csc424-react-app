@@ -14,7 +14,7 @@ async function checkUsernameExists(username) {
 }
 
 async function checkLogin(username, password) {
-    return (await userModel.find({ username: username, password:password }))[0];
+    return ((await userModel.find({ username: username }))[0]).validPassword(password);
 }
 
 async function findUserById(id) {
@@ -40,6 +40,7 @@ async function getAllUsers() {
 async function addUser(user) {
 try {
     const userToAdd = new userModel(user);
+    userToAdd.setPassword(user.password)
     const savedUser = await userToAdd.save();
     return savedUser;
 } catch (error) {

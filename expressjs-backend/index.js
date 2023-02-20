@@ -46,7 +46,7 @@ app.get('/account/:username', async (req, res) => {
 app.get('/contacts', async (req,res) =>{
     var allUsersInformation = await userServices.getAllUsers();
     var allUsers = allUsersInformation.map(user => {
-        return {name: user.username}
+        return {name: user.username, phoneNumber:user.phoneNumber}
     })
     return res.status(200).send(allUsers);
 })
@@ -67,9 +67,9 @@ app.post('/account/register', async (req, res) => {
     const userFound = await userServices.checkUsernameExists(userToAdd.username);
 
     if(userFound !== true){
-        userToAdd.token = jwtServices.generateAccessToken(userToAdd.username);
+        let tk = jwtServices.generateAccessToken(userToAdd.username);
         const savedUser = await userServices.addUser(userToAdd);
-        res.status(201).send(savedUser);
+        res.status(201).send(tk);
     }
     else{
         res.status(403).end();
@@ -79,13 +79,11 @@ app.post('/account/register', async (req, res) => {
 app.post('/account/login', async (req,res) => {
     var userToLogin = req.body;
     const userFound = await userServices.checkLogin(userToLogin.username, userToLogin.password);
-    console.log(userFound)
-    if(userFound !== undefined){
-        res.status(201).send(userFound);
+
+    if(userFound !== false){
+        res.status(201).send(jwtServices.generateAccessToken(userToLogin.username));
     }else{
         res.status(403).end();
     }
 });
-
-
 
