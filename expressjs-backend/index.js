@@ -4,6 +4,7 @@ const fs = require("fs");
 const express = require('express');
 const cors = require("cors");
 const helmet = require("helmet");
+const escape = require("lodash.escape");
 
 const userServices = require('./models/user-services');
 const jwtServices = require('./models/jwt-services');
@@ -38,7 +39,8 @@ app.get('/account/:username', async (req, res) => {
     let username = req.params["username"];
     if(username){
         let user = await userServices.getUser(username);
-        let htmlEncoded = `<p class="user">${user}</p>`;
+        let userHtml = escape(user);
+        let htmlEncoded = `<p class="user">${userHtml}</p>`;
         res.status(200).send(htmlEncoded);
     }
     else{
