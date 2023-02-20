@@ -3,9 +3,6 @@ import { useAuth } from "../../context/AuthProvider";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 
-
-
-
 const Home = () => {
     const {value} = useAuth();
     const [isLogin, setLogin] = useState(true);

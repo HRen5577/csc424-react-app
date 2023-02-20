@@ -876,6 +876,9 @@
     width: 100%;
     max-width: 100%;
     line-height: 1;
+    color: white;
+    font-family: monospace, monospace;
+
   }
   
   [type=color]:hover, [type=date]:hover, [type=datetime]:hover, [type=datetime-local]:hover, [type=email]:hover, [type=month]:hover, [type=number]:hover, [type=password]:hover, [type=search]:hover, [type=tel]:hover, [type=text]:hover, [type=url]:hover, [type=week]:hover, [type=time]:hover, select:hover, textarea:hover {
