@@ -16,13 +16,20 @@ This project uses a file called ".env" to hide secrets. One of them is a TOKEN_S
 This project uses a local database MongoDB. This requires for you to have MongoDB installed on your computer. 
 
 # Instructions
+
+## Installation
+
+1.  Clone the repo: `git clone https://github.com/csc424-react-app`
+2.  Move into the repo's directory: `cd csc424-react-app`
+3.  Install dependencies with Node: `npm install`
+
 ## Starting the Project
 Assuming you are at the root folder
 ### Start the backend
-`cd express-backend`
-`node index.js`
+1. `cd express-backend`
+2. `node index.js`
 
 ### Start the frontend
-`cd ./../react-frontend`
-`npm start`
+3. `cd ./../react-frontend`
+4. `npm start`
 
