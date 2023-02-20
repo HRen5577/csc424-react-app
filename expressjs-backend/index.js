@@ -43,19 +43,12 @@ app.get('/account/:username', async (req, res) => {
     }
 })
 
-app.get('/account/:username/contacts', async (req,res) =>{
-    let username = req.params["username"];
-    if(username){
-        var allUsersInformation = await userServices.getAllUsers();
-        var allUsers = allUsersInformation.map(user => {
-            return {name: user.username}
-        })
-        var filteredusers = allUsers.filter(user => user.name !== username)
-        res.status(200).send(filteredusers)
-    }
-    else{
-        res.status(404).end("User not found!")
-    }
+app.get('/account/contacts', async (req,res) =>{
+    var allUsersInformation = await userServices.getAllUsers();
+    var allUsers = allUsersInformation.map(user => {
+        return {name: user.username}
+    })
+    return allUsers;
 })
 
 app.delete('/account/:username', async (req, res) => {

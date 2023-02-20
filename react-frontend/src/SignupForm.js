@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { signup } from "./UserFuncions";
+import { signup } from "./UserFunctions";
 import { useAuth } from "./context/AuthProvider";
 import "./SignupForm.css";
 

@@ -30,9 +30,7 @@ export async function login(un, pas) {
   export async function getContacts(un) {
     try {
       //const config = { headers: { authorization: `Bearer ${user.auth_token}` } };
-      return await axios.get("https://localhost:5000/" + un +"/contacts",
-      { username: un,
-      });
+      return await axios.get("https://localhost:5000/contacts");
     } catch (error) {
       //console.log(error);
       return false;

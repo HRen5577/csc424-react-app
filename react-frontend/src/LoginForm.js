@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { login } from "./UserFuncions";
+import { login } from "./UserFunctions";
 import { useAuth } from "./context/AuthProvider";
 import "./LoginForm.css";
 
