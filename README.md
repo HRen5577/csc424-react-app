@@ -18,11 +18,11 @@ This project uses a local database MongoDB. This requires for you to have MongoD
 # Instructions
 
 ## Installation
-1.  Clone the repo: `git clone https://github.com/csc424-react-app`
+1.  Clone the repo: `git clone https://github.com/HRen5577/csc424-react-app`
 2.  Move into the repo's directory: `cd csc424-react-app`
 3.  Move into backend `cd express-backend`
 4.  Install dependencies with Node: `npm install`
-5.  Move into backend `cd ../react-frontend`
+5.  Move into backend `cd ./../react-frontend`
 6.  Install dependencies with Node: `npm install` 
 
 ## Starting the Project
@@ -35,3 +35,6 @@ Assuming you are at the root folder
 3. `cd ./../react-frontend`
 4. `npm start`
 
+### Personal note
+Creating the SBOM
+`npx @cyclonedx/cyclonedx-npm --output-format json --output-file cyclonedx_fe_sbom.json`

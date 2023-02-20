@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:20dc51e2-8e9b-480e-a6a5-959372ac53f8",
+  "serialNumber": "urn:uuid:9306f4ec-da06-4574-8aad-521a95a421e1",
   "metadata": {
-    "timestamp": "2023-02-02T23:42:37.231Z",
+    "timestamp": "2023-02-20T17:47:07.360Z",
     "tools": [
       {
         "vendor": "@cyclonedx",
@@ -6142,6 +6142,86 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/proxy-from-env"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "https",
+      "version": "1.0.0",
+      "bom-ref": "https@1.0.0",
+      "author": "hardus van der berg <hardus@sunfork.com> (http://www.sunfork.com)",
+      "description": "https mediation",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e040b9edd757ae4685d31f373a3f2c33a48b4070165f0f744a4aaed8ce0011610d677174d9d14913f180440f2280eefdb5c818a86ac3eda7b87f92f7ba6da582"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/https@1.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/https/-/https-1.0.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/https"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prettier",
+      "version": "2.8.4",
+      "bom-ref": "prettier@2.8.4",
+      "author": "James Long",
+      "description": "Prettier is an opinionated code formatter",
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "bc84b846573614d8740724a4dd691deb19b0c41d05a4e9dd5b97e2b0ce47f21b194b1536556541e425889088d6beb1e3221c64da0ddb7cc28cf3bccd4eb65d77"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/prettier@2.8.4",
+      "externalReferences": [
+        {
+          "url": "prettier/prettier",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository\""
+        },
+        {
+          "url": "https://prettier.io",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://registry.npmjs.org/prettier/-/prettier-2.8.4.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/prettier"
         }
       ]
     },
@@ -65489,6 +65569,8 @@
         "@testing-library/react@13.4.0",
         "@testing-library/user-event@13.5.0",
         "axios@1.2.3",
+        "https@1.0.0",
+        "prettier@2.8.4",
         "react-dom@18.2.0",
         "react-router-dom@6.6.2",
         "react-scripts@5.0.1",
@@ -66270,6 +66352,12 @@
     },
     {
       "ref": "proxy-from-env@1.1.0"
+    },
+    {
+      "ref": "https@1.0.0"
+    },
+    {
+      "ref": "prettier@2.8.4"
     },
     {
       "ref": "loose-envify@1.4.0",
