@@ -53,17 +53,17 @@ app.get('/contacts', async (req,res) =>{
     var allUsers = allUsersInformation.map(user => {
         return {name: user.username, phoneNumber:user.phoneNumber}
     })
-    //let htmlEncoded = `<p class="user">${allUsers}</p>`;
-    let userHtml = escape(user);
-    let htmlEncoded = `<p class="user">${userHtml}</p>`;
+    //let userHtml = escape(allUsers);
+    //let htmlEncoded = `<p class="user">${userHtml}</p>`;
     return res.status(200).send(allUsers);
 })
 
 app.delete('/account/:username', async (req, res) => {
     let username = req.params["username"];
     if(username){
-        const userDeleted = await userServices.deleteUser(username)
-        //let htmlEncoded = `<p class="user">${userDeleted}</p>`;
+        const userDeleted = await userServices.deleteUser(username);
+        //let userHtml = escape(usersDeleted);
+        //let htmlEncoded = `<p class="user">${userHtml}</p>`;
         res.status(200).send(userDeleted);
     }
     else{
@@ -78,7 +78,8 @@ app.post('/account/register', async (req, res) => {
     if(userFound !== true){
         let tk = jwtServices.generateAccessToken(userToAdd.username);
         const savedUser = await userServices.addUser(userToAdd);
-        //let htmlEncoded = `<p class="user">${tk}</p>`;
+        //let tkHTML = escape(tk);
+        //let htmlEncoded = `<p class="user">${tkHTML}</p>`;
         res.status(201).send(tk);
     }
     else{
@@ -92,7 +93,8 @@ app.post('/account/login', async (req,res) => {
 
     if(userFound !== false){
         let tk = jwtServices.generateAccessToken(userToLogin.username);
-        //let htmlEncoded = `<p class="user">${tk}</p>`;
+        //let tkHTML = escape(tk);
+        //let htmlEncoded = `<p class="user">${tkHTML}</p>`;        
         res.status(201).send(tk);
     }else{
         res.status(403).end();
